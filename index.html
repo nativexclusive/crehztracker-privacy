@@ -160,7 +160,7 @@ footer {
 <div class="short">
 <ul>
   <li>Your books — expenses, income, drives, receipts — are stored on our servers so they survive a lost phone and reach your other devices.</li>
-  <li>Receipt text and your questions to the assistant are sent to <strong>Anthropic</strong> to be read and answered.</li>
+  <li>Receipt text is sent to <strong>Anthropic</strong> to be read, and so is <strong>the name of a shop you have not filed before</strong>, so a category can be suggested for it. When you ask the assistant a question, <strong>your whole ledger goes with it</strong> — every expense, income entry, drive and payee — because it answers from your books rather than searching them.</li>
   <li>Location is used to measure drives. It is <strong>optional</strong>, off until you turn it on, and the app records where a drive started and ended plus how far it went — not a continuous trail.</li>
   <li>Nothing is sold, and nothing is used for advertising or for tracking you across other apps or websites.</li>
 </ul>
@@ -223,7 +223,7 @@ across other apps or websites. These are the services the app depends on:</p>
   <thead><tr><th>Service</th><th>What reaches them</th><th>Why</th></tr></thead>
   <tbody>
     <tr><td><strong>Supabase</strong></td><td>Everything listed above — it is where the database, sign-in and receipt storage live</td><td>Hosting</td></tr>
-    <tr><td><strong>Anthropic</strong></td><td>The <strong>text of receipts</strong> being read, and <strong>your questions to the assistant</strong> along with the figures needed to answer them</td><td>Reading receipts, answering questions</td></tr>
+    <tr><td><strong>Anthropic</strong></td><td>The <strong>text of receipts</strong> being read; <strong>the name of a shop</strong> you have no history with, together with your category names; and <strong>your questions to the assistant</strong> along with <strong>your complete ledger</strong> — every expense, income entry, drive and payee, with their dates, amounts, names and notes</td><td>Reading receipts, suggesting a category, answering questions</td></tr>
     <tr><td><strong>Postmark</strong></td><td>Sign-in code emails, and receipts you forward</td><td>Sending and receiving mail</td></tr>
     <tr><td><strong>Apple</strong></td><td>Sign in with Apple; coordinates sent to the geocoder to name a drive&rsquo;s endpoints; speech, where on-device recognition is unavailable</td><td>Sign-in, place names, dictation</td></tr>
     <tr><td><strong>European Central Bank</strong> (via Frankfurter)</td><td><strong>Nothing personal</strong> — only a currency pair and a date</td><td>Exchange rates</td></tr>
@@ -232,10 +232,26 @@ across other apps or websites. These are the services the app depends on:</p>
 </div>
 
 <p><strong>On the assistant specifically:</strong> when you ask it a question,
-the parts of your books needed to answer are sent to Anthropic along with the
-question. When you scan a receipt, its image or text is sent to Anthropic to be
-read. If you would rather that did not happen, do not use the assistant or the
-scanner — every figure can be typed in by hand.</p>
+your <strong>entire ledger</strong> is sent to Anthropic along with the question
+— every expense, income entry, drive and payee, including dates, amounts,
+vendor and payee names, and any notes you have written. It is sent on every
+question, not only the first, because the assistant answers out of your books
+rather than looking things up in them. It is not used to train anyone&rsquo;s
+models, and it is not kept as a profile of you. When you scan a receipt, its
+image or text is sent to Anthropic to be read.</p>
+
+<p><strong>On naming a category for a shop:</strong> when an expense arrives
+from a tap or a Shortcut for a shop you have never filed before, <strong>the
+shop&rsquo;s name and the names of your categories</strong> are sent to Anthropic
+so it can pick one. Nothing else goes with it — not the amount, not the date,
+not your ledger. It happens <strong>once per shop, ever</strong>: the answer
+becomes that expense&rsquo;s category, and from then on the app reuses what you
+chose rather than asking again. If you name the category yourself in the
+Shortcut, nothing is sent at all.</p>
+
+<p>If you would rather none of that happened, <strong>turn the assistant off in
+Settings</strong>, do not use the scanner, and either name categories yourself or
+leave tap capture unset up — every figure can be typed in by hand.</p>
 
 <h2>Where it is stored, and for how long</h2>
 <p>Data is held on Supabase infrastructure. We keep it for as long as your
