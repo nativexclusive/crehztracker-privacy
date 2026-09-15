@@ -147,7 +147,7 @@ footer {
 </header>
 
 <h1>Privacy Policy</h1>
-<p class="effective">Effective 20 August 2026</p>
+<p class="effective">Effective 14 September 2026</p>
 
 <div class="notice">
   <p><strong>CrehzTracker is an expense and mileage tracker for self-employed
@@ -161,6 +161,7 @@ footer {
 <ul>
   <li>Your books — expenses, income, drives, receipts — are stored on our servers so they survive a lost phone and reach your other devices.</li>
   <li>Receipt text is sent to <strong>Anthropic</strong> to be read, and so is <strong>the name of a shop you have not filed before</strong>, so a category can be suggested for it. When you ask the assistant a question, <strong>your whole ledger goes with it</strong> — every expense, income entry, drive and payee — because it answers from your books rather than searching them.</li>
+  <li>If you turn the assistant&rsquo;s voice on, the text of its replies is sent to <strong>OpenAI</strong> to be spoken. A logo you ask for is drawn by OpenAI from the name and description you give. Neither happens unless you choose it.</li>
   <li>Location is used to measure drives. It is <strong>optional</strong>, off until you turn it on, and the app records where a drive started and ended plus how far it went — not a continuous trail.</li>
   <li>Nothing is sold, and nothing is used for advertising or for tracking you across other apps or websites.</li>
 </ul>
@@ -224,6 +225,7 @@ across other apps or websites. These are the services the app depends on:</p>
   <tbody>
     <tr><td><strong>Supabase</strong></td><td>Everything listed above — it is where the database, sign-in and receipt storage live</td><td>Hosting</td></tr>
     <tr><td><strong>Anthropic</strong></td><td>The <strong>text of receipts</strong> being read; <strong>the name of a shop</strong> you have no history with, together with your category names; and <strong>your questions to the assistant</strong> along with <strong>your complete ledger</strong> — every expense, income entry, drive and payee, with their dates, amounts, names and notes</td><td>Reading receipts, suggesting a category, answering questions</td></tr>
+    <tr><td><strong>OpenAI</strong></td><td>If you turn the assistant&rsquo;s <strong>voice</strong> on, the <strong>text of each reply</strong> is sent to be spoken &mdash; never a recording of you. If you ask for a <strong>logo</strong>, the <strong>business name and description</strong> you type, and the sample picture if you attach one</td><td>Speaking replies, drawing a logo</td></tr>
     <tr><td><strong>Postmark</strong></td><td>Sign-in code emails, and receipts you forward</td><td>Sending and receiving mail</td></tr>
     <tr><td><strong>Apple</strong></td><td>Sign in with Apple; coordinates sent to the geocoder to name a drive&rsquo;s endpoints; speech, where on-device recognition is unavailable</td><td>Sign-in, place names, dictation</td></tr>
     <tr><td><strong>European Central Bank</strong> (via Frankfurter)</td><td><strong>Nothing personal</strong> — only a currency pair and a date</td><td>Exchange rates</td></tr>
@@ -279,6 +281,7 @@ do not knowingly collect data from anyone under 13.</p>
 <ul>
   <li><strong>Location</strong> — off unless you turn it on, and revocable at any time in Settings &rarr; CrehzTracker &rarr; Location. Drives can be entered by hand instead.</li>
   <li><strong>Camera and microphone</strong> — only used when you invoke them, and revocable in iOS Settings.</li>
+  <li><strong>Voice and logos</strong> — the assistant&rsquo;s voice is off until you choose one in Settings, and a logo is only generated when you ask for one.</li>
   <li><strong>Access and export</strong> — Reports &amp; Analytics exports your data as PDF, CSV and a zip of your receipts.</li>
   <li><strong>Deletion</strong> — as above.</li>
 </ul>
