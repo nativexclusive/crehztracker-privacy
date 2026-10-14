@@ -147,7 +147,7 @@ footer {
 </header>
 
 <h1>Privacy Policy</h1>
-<p class="effective">Effective 25 September 2026</p>
+<p class="effective">Effective 13 October 2026</p>
 
 <div class="notice">
   <p><strong>CrehzTracker is an expense and mileage tracker for self-employed
@@ -163,6 +163,7 @@ footer {
   <li>Receipt text is sent to <strong>Anthropic</strong> to be read, and so is <strong>the name of a shop you have not filed before</strong>, so a category can be suggested for it. When you ask the assistant a question, <strong>your whole ledger goes with it</strong> — every expense, income entry, drive and payee — because it answers from your books rather than searching them.</li>
   <li>If you turn the assistant&rsquo;s voice on, the text of its replies is sent to <strong>OpenAI</strong> to be spoken. A logo you ask for is drawn by OpenAI from the name and description you give. Neither happens unless you choose it.</li>
   <li>Location is used to measure drives. It is <strong>optional</strong>, off until you turn it on, and the app records where a drive started and ended plus how far it went — not a continuous trail.</li>
+  <li>Paid plans are bought through <strong>Apple</strong>. Apple takes the payment; we never see your card or your Apple ID. We receive which plan you have, when it renews or ends, and whether it is a free trial, so the app can switch the plan&rsquo;s features on.</li>
   <li>Nothing is sold, and nothing is used for advertising or for tracking you across other apps or websites.</li>
 </ul>
 </div>
@@ -204,6 +205,21 @@ location to measure how far you drive.</p>
 <p>Be aware that the start and end points of your regular journeys can identify
 where you live and work.</p>
 
+<h3>Purchases — if you buy a plan</h3>
+<p>Pro and Business are App Store subscriptions. You buy, renew and cancel them
+with Apple, and <strong>Apple handles the payment</strong>: we never receive your
+card, your billing address or your Apple ID&rsquo;s email address.</p>
+<p>When you buy or restore a plan, the app sends us Apple&rsquo;s signed record of the
+purchase, and Apple sends us the same kind of signed notice when it renews,
+changes, is refunded or ends. We check Apple&rsquo;s signature, and keep, against your
+CrehzTracker account:</p>
+<ul>
+  <li>which plan and billing period you have (for example, Pro yearly);</li>
+  <li>when it renews or ends, whether it is in a free trial, and whether it is set to renew;</li>
+  <li>Apple&rsquo;s transaction numbers for it, and whether it was refunded or revoked.</li>
+</ul>
+<p>We use this for one thing: to switch the plan&rsquo;s features on and off.</p>
+
 <h3>Camera, microphone and motion</h3>
 <ul>
   <li><strong>Camera</strong> — only when you scan a receipt or cheque.</li>
@@ -212,8 +228,10 @@ where you live and work.</p>
 </ul>
 
 <h3>Usage</h3>
-<p>We count how many assistant requests your account makes each hour, to enforce
-rate limits. No content of those requests is stored in that count.</p>
+<p>We count how many questions your account asks the assistant each hour, and how
+many it has answered this month, and how many receipts the AI has read and logos
+it has drawn this month. These counts enforce rate limits and your plan&rsquo;s
+monthly allowances. No content of those requests is stored in them.</p>
 
 <h2>Who else sees your data</h2>
 <p>We do not sell data. We do not use it for advertising. We do not track you
@@ -227,7 +245,7 @@ across other apps or websites. These are the services the app depends on:</p>
     <tr><td><strong>Anthropic</strong></td><td>The <strong>text of receipts</strong> being read; <strong>the name of a shop</strong> you have no history with, together with your category names; and <strong>your questions to the assistant</strong> along with <strong>your complete ledger</strong> — every expense, income entry, drive and payee, with their dates, amounts, names and notes</td><td>Reading receipts, suggesting a category, answering questions</td></tr>
     <tr><td><strong>OpenAI</strong></td><td>If you turn the assistant&rsquo;s <strong>voice</strong> on, the <strong>text of each reply</strong> is sent to be spoken &mdash; never a recording of you. If you ask for a <strong>logo</strong>, the <strong>business name and description</strong> you type, and the sample picture if you attach one</td><td>Speaking replies, drawing a logo</td></tr>
     <tr><td><strong>Postmark</strong></td><td>Sign-in code emails, and receipts you forward</td><td>Sending and receiving mail</td></tr>
-    <tr><td><strong>Apple</strong></td><td>Sign in with Apple; coordinates sent to the geocoder to name a drive&rsquo;s endpoints; speech, where on-device recognition is unavailable</td><td>Sign-in, place names, dictation</td></tr>
+    <tr><td><strong>Apple</strong></td><td>Sign in with Apple; if you buy a plan, the payment (Apple tells us the plan and its status, never your card); coordinates sent to the geocoder to name a drive&rsquo;s endpoints; speech, where on-device recognition is unavailable</td><td>Sign-in, subscriptions, place names, dictation</td></tr>
     <tr><td><strong>European Central Bank</strong> (via Frankfurter)</td><td><strong>Nothing personal</strong> — only a currency pair and a date</td><td>Exchange rates</td></tr>
   </tbody>
 </table>
@@ -283,12 +301,12 @@ of their replies: what comes back is written into your books as an expense or an
 income entry, which you own and can delete.</p>
 
 <h2>Where it is stored, and for how long</h2>
-<p>Data is held on Supabase infrastructure. We keep it for as long as your
-account exists, because it is a financial record and you may need past years for
-tax.</p>
+<p>Data is held on Supabase infrastructure in <strong>Montreal, Canada</strong>,
+encrypted in transit and at rest. We keep it for as long as your account exists,
+because it is a financial record and you may need past years for tax.</p>
 <ul>
   <li><strong>Clear all data</strong> (Settings &rarr; Account) erases your expenses, income, drives, payees and budget from your account and from your other devices. Your account, your settings and your forwarding address are kept. It is not reversible.</li>
-  <li><strong>Delete account</strong> (Settings &rarr; Account) removes the account itself and everything belonging to it: your books, your receipt images, your forwarding address, your settings and your sign-in. It happens immediately, it applies to every device you are signed in on, and there is no backup and no undo. You are asked to type DELETE to confirm.</li>
+  <li><strong>Delete account</strong> (Settings &rarr; Account) removes the account itself and everything belonging to it: your books, your receipt images, your forwarding address, your settings and your sign-in. It happens immediately and applies to every device you are signed in on, and there is no undo. Our hosting provider&rsquo;s encrypted daily backups still contain it for up to 7 days; they are never used to restore deleted data, and once they expire it is gone. You are asked to type DELETE to confirm. <strong>Deleting your account does not cancel a subscription</strong>: Apple bills it, so cancel it in iPhone Settings &rarr; your name &rarr; Subscriptions. The app reminds you of this on the Delete account screen.</li>
   <li>If you cannot sign in and need the account removed, or want to ask what we hold about you, email <a href="mailto:info@crehztracker.com">info@crehztracker.com</a>.</li>
   <li>Once an account is deleted the forwarding address stops working, and anything forwarded to it afterwards is discarded rather than stored.</li>
   <li>When you delete individual rows, they are first marked deleted so that your other devices learn about the deletion, then removed.</li>
