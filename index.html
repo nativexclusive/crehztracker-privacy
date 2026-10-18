@@ -147,7 +147,7 @@ footer {
 </header>
 
 <h1>Privacy Policy</h1>
-<p class="effective">Effective 13 October 2026</p>
+<p class="effective">Effective 18 October 2026</p>
 
 <div class="notice">
   <p><strong>CrehzTracker is an expense and mileage tracker for self-employed
@@ -163,6 +163,7 @@ footer {
   <li>Receipt text is sent to <strong>Anthropic</strong> to be read, and so is <strong>the name of a shop you have not filed before</strong>, so a category can be suggested for it. When you ask the assistant a question, <strong>your whole ledger goes with it</strong> — every expense, income entry, drive and payee — because it answers from your books rather than searching them.</li>
   <li>If you turn the assistant&rsquo;s voice on, the text of its replies is sent to <strong>OpenAI</strong> to be spoken. A logo you ask for is drawn by OpenAI from the name and description you give. Neither happens unless you choose it.</li>
   <li>Location is used to measure drives. It is <strong>optional</strong>, off until you turn it on, and the app records where a drive started and ended plus how far it went — not a continuous trail.</li>
+  <li>Connecting a bank is <strong>optional</strong>. If you do, it goes through <strong>Plaid</strong>: you sign in to your bank on Plaid&rsquo;s screen, and we <strong>never see your bank password</strong> or your full account numbers, and cannot move money. We receive your account names, their last four digits and your transactions, so purchases can be filed into your books without typing.</li>
   <li>Paid plans are bought through <strong>Apple</strong>. Apple takes the payment; we never see your card or your Apple ID. We receive which plan you have, when it renews or ends, and whether it is a free trial, so the app can switch the plan&rsquo;s features on.</li>
   <li>Nothing is sold, and nothing is used for advertising or for tracking you across other apps or websites.</li>
 </ul>
@@ -205,6 +206,39 @@ location to measure how far you drive.</p>
 <p>Be aware that the start and end points of your regular journeys can identify
 where you live and work.</p>
 
+<h3>Bank accounts — optional, through Plaid</h3>
+<p>You can connect a bank or credit card so purchases and deposits come in by
+themselves instead of being typed. This uses <strong>Plaid</strong>
+(<a href="https://plaid.com">plaid.com</a>). Before Plaid opens, the app asks
+you to confirm it is you with Face ID, Touch ID or your phone&rsquo;s passcode,
+and shows what will be shared. You then sign in to your bank <strong>on
+Plaid&rsquo;s screen</strong>: your bank username and password go to Plaid and
+your bank, <strong>never to us</strong>. Opening Settings &rarr; Bank accounts
+asks for Face ID again.</p>
+<p>From each account you choose to connect, we receive:</p>
+<ul>
+  <li>the bank&rsquo;s name, and the account&rsquo;s name, type (for example checking or credit card) and last four digits;</li>
+  <li>its transactions: date, amount and currency, the merchant or description, Plaid&rsquo;s category for it and how sure Plaid is, whether it was online or in store, the name of the other person for a payment to or from someone (for example by Zelle or Venmo), and whether it is still pending;</li>
+  <li>the history you choose when connecting (since 1 January, the last 90 days, or from today), then new transactions as they post.</li>
+</ul>
+<p>We do <strong>not</strong> receive or store your bank login, your full account
+or card numbers, or routing numbers, and we <strong>cannot move money</strong>:
+the connection is read-only. Plaid gives our server a key to read the accounts
+you connected; it is stored <strong>encrypted</strong>, and never on your phone.</p>
+<p><strong>What the app does with them.</strong> Transactions are used for one
+thing: to fill in your books. Each account feeds the set of books you choose, or
+is skipped. A transaction waits in the <strong>Bank Inbox</strong>, and is not in
+your totals, until it is filed. You can file them one by one, accept the
+app&rsquo;s suggestions, or make a rule for a shop (&ldquo;always file Uber as
+Travel&rdquo;). After you have reviewed a bank once, purchases the app is sure
+about &mdash; your rules, a receipt you already scanned, a shop you have filed
+before, or one Plaid is confident about &mdash; <strong>file themselves</strong>,
+marked so you can see them and undo them; you can turn this off. Payments to tax
+offices are recorded as tax paid, never as an expense, and payments to people can
+be added to their 1099 totals. Plaid&rsquo;s own handling of your data is described
+in its <a href="https://plaid.com/legal/#end-user-privacy-policy">End User Privacy
+Policy</a>.</p>
+
 <h3>Purchases — if you buy a plan</h3>
 <p>Pro and Business are App Store subscriptions. You buy, renew and cancel them
 with Apple, and <strong>Apple handles the payment</strong>: we never receive your
@@ -244,6 +278,7 @@ across other apps or websites. These are the services the app depends on:</p>
     <tr><td><strong>Supabase</strong></td><td>Everything listed above — it is where the database, sign-in and receipt storage live</td><td>Hosting</td></tr>
     <tr><td><strong>Anthropic</strong></td><td>The <strong>text of receipts</strong> being read; <strong>the name of a shop</strong> you have no history with, together with your category names; and <strong>your questions to the assistant</strong> along with <strong>your complete ledger</strong> — every expense, income entry, drive and payee, with their dates, amounts, names and notes</td><td>Reading receipts, suggesting a category, answering questions</td></tr>
     <tr><td><strong>OpenAI</strong></td><td>If you turn the assistant&rsquo;s <strong>voice</strong> on, the <strong>text of each reply</strong> is sent to be spoken &mdash; never a recording of you. If you ask for a <strong>logo</strong>, the <strong>business name and description</strong> you type, and the sample picture if you attach one</td><td>Speaking replies, drawing a logo</td></tr>
+    <tr><td><strong>Plaid</strong></td><td>If you connect a bank: your bank sign-in, entered on Plaid&rsquo;s screen and never ours. Plaid returns your accounts&rsquo; names and last four digits and their transactions to us</td><td>Bank connections</td></tr>
     <tr><td><strong>Postmark</strong></td><td>Sign-in code emails, and receipts you forward</td><td>Sending and receiving mail</td></tr>
     <tr><td><strong>Apple</strong></td><td>Sign in with Apple; if you buy a plan, the payment (Apple tells us the plan and its status, never your card); coordinates sent to the geocoder to name a drive&rsquo;s endpoints; speech, where on-device recognition is unavailable</td><td>Sign-in, subscriptions, place names, dictation</td></tr>
     <tr><td><strong>European Central Bank</strong> (via Frankfurter)</td><td><strong>Nothing personal</strong> — only a currency pair and a date</td><td>Exchange rates</td></tr>
@@ -261,13 +296,22 @@ models, and it is not kept as a profile of you. When you scan a receipt, its
 image or text is sent to Anthropic to be read.</p>
 
 <p><strong>On naming a category for a shop:</strong> when an expense arrives
-from a tap or a Shortcut for a shop you have never filed before, <strong>the
-shop&rsquo;s name and the names of your categories</strong> are sent to Anthropic
-so it can pick one. Nothing else goes with it — not the amount, not the date,
+from a tap, a Shortcut or your bank for a shop you have never filed before, and
+neither your history nor Plaid can say what it is, <strong>the shop&rsquo;s name
+and the names of your categories</strong> are sent to Anthropic so it can suggest
+one. Nothing else goes with it — not the amount, not the date,
 not your ledger. It happens <strong>once per shop, ever</strong>: the answer
 becomes that expense&rsquo;s category, and from then on the app reuses what you
 chose rather than asking again. If you name the category yourself in the
 Shortcut, nothing is sent at all.</p>
+
+<p><strong>On bank connections specifically:</strong> a bank transaction becomes
+part of your books once it is filed, and from then on it is treated like
+everything else in them &mdash; stored on Supabase, and included in the ledger
+sent to Anthropic when you ask the assistant a question. Transactions still
+waiting in the Bank Inbox are not sent to the assistant, and only a shop&rsquo;s
+name is ever sent to suggest a category. Bank data is never sold, never shared
+with anyone else and never used for advertising.</p>
 
 <p><strong>The app asks first.</strong> Nothing is sent to Anthropic or OpenAI
 until you agree, on a screen in the app that names both companies and lists what
@@ -307,6 +351,8 @@ because it is a financial record and you may need past years for tax.</p>
 <ul>
   <li><strong>Clear all data</strong> (Settings &rarr; Account) erases your expenses, income, drives, payees and budget from your account and from your other devices. Your account, your settings and your forwarding address are kept. It is not reversible.</li>
   <li><strong>Delete account</strong> (Settings &rarr; Account) removes the account itself and everything belonging to it: your books, your receipt images, your forwarding address, your settings and your sign-in. It happens immediately and applies to every device you are signed in on, and there is no undo. Our hosting provider&rsquo;s encrypted daily backups still contain it for up to 7 days; they are never used to restore deleted data, and once they expire it is gone. You are asked to type DELETE to confirm. <strong>Deleting your account does not cancel a subscription</strong>: Apple bills it, so cancel it in iPhone Settings &rarr; your name &rarr; Subscriptions. The app reminds you of this on the Delete account screen.</li>
+  <li><strong>Bank connections.</strong> While a bank is connected, its transactions are kept on our servers so the Bank Inbox works on all your devices. Rules you make are kept until you delete them (Settings &rarr; Bank accounts &rarr; Rules). <strong>Disconnecting a bank</strong> (Settings &rarr; Bank accounts) ends the connection at Plaid and deletes that bank, its accounts and the transactions still waiting from our servers. Transactions you already filed stay in your books until you delete them, because they are part of your records. A connection is also ended for you if you don&rsquo;t open the app for 60 days, or if your plan allows fewer banks than you have connected (after 7 days, unless you choose which to keep).</li>
+  <li><strong>Deleting your account</strong> also ends every bank connection at Plaid and deletes all bank data from our servers.</li>
   <li>If you cannot sign in and need the account removed, or want to ask what we hold about you, email <a href="mailto:info@crehztracker.com">info@crehztracker.com</a>.</li>
   <li>Once an account is deleted the forwarding address stops working, and anything forwarded to it afterwards is discarded rather than stored.</li>
   <li>When you delete individual rows, they are first marked deleted so that your other devices learn about the deletion, then removed.</li>
@@ -314,7 +360,8 @@ because it is a financial record and you may need past years for tax.</p>
 
 <h2>Names of other people</h2>
 <p>If you record paying someone — a musician, a contractor — you are storing
-their name in our system. That is your record, and you are responsible for
+their name in our system &mdash; typed by you, or taken from your bank&rsquo;s
+description of a payment to them. That is your record, and you are responsible for
 handling it appropriately. We use it only to show you your own books and to
 total payments for 1099 purposes.</p>
 
@@ -327,6 +374,7 @@ do not knowingly collect data from anyone under 13.</p>
   <li><strong>Location</strong> — off unless you turn it on, and revocable at any time in Settings &rarr; CrehzTracker &rarr; Location. Drives can be entered by hand instead.</li>
   <li><strong>Camera and microphone</strong> — only used when you invoke them, and revocable in iOS Settings.</li>
   <li><strong>AI features</strong> — off until you agree in the app, and you can turn them off again in Settings &rarr; Capture &rarr; AI features. The assistant&rsquo;s voice is off until you choose one, and a logo is only generated when you ask for one.</li>
+  <li><strong>Bank connections</strong> — off unless you connect a bank. You can disconnect any bank at any time in Settings &rarr; Bank accounts, turn off purchases filing themselves, and undo anything that was filed. Everything can still be entered by hand, scanned or forwarded instead.</li>
   <li><strong>Access and export</strong> — Reports &amp; Analytics exports your data as PDF, CSV and a zip of your receipts.</li>
   <li><strong>Deletion</strong> — as above.</li>
 </ul>
@@ -337,6 +385,10 @@ only by your account: the database enforces this itself, so a request for
 someone else&rsquo;s rows is refused by the server rather than filtered by the
 app. Receipt images live in a private bucket and are reached through short-lived
 links issued one file at a time.</p>
+<p>Bank connections are made through Plaid, after Face ID, Touch ID or your
+passcode on the phone. The key that lets our server read your connected accounts
+is encrypted before it is stored and never leaves the server, and the messages
+Plaid sends us are checked against Plaid&rsquo;s signature before they are used.</p>
 <p>No system is perfectly secure, and we do not claim otherwise.</p>
 
 <h2>Changes</h2>
